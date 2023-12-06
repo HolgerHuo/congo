@@ -44,6 +44,7 @@ search:
   input_placeholder: "Search"
 
 sharing:
+  info: "SHARE TO"
   email: "Send via email"
   facebook: "Share on Facebook"
   linkedin: "Share on LinkedIn"
