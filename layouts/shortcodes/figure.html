@@ -23,7 +23,7 @@
       {{ $webp := $.Page.Site.Params.enableImageWebp | default true }}
       {{ partial "picture.html" (dict "img" . "alt" $altText "class" $class "lazy" $lazy "webp" $webp) }}
     {{- else -}}
-      <img src="{{ $url.String }}" alt="{{ $altText }}" class="{{ $class }}"/>
+      <img src="{{ $url.String }}" alt="{{ $altText }}" class="{{ $class | default "mx-auto" }}"/>
     {{- end -}}
 
     {{ with $href }}</a>{{ end }}
