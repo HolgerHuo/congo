@@ -1,10 +1,15 @@
 {{ with .Params.sharingLinks | default (.Site.Params.article.sharingLinks | default false) }}
   {{ $links := site.Data.sharing }}
-  <section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
+  <div class="flex items-center pt-3">
+    <div class="flex-grow border-t border-dotted border-neutral-300 dark:border-neutral-600"></div>
+    <span class="flex-shrink mx-1 text-sm text-neutral-500 dark:text-neutral-400">{{ i18n "sharing.info" }}</span>
+    <div class="flex-grow border-t border-dotted border-neutral-300 dark:border-neutral-600"></div>
+  </div>
+  <section class="flex flex-row flex-wrap justify-center text-xl pb-2">
     {{ range . }}
       {{ with index $links . }}
         <a
-          class="m-1 inline-block min-w-[2.4rem] rounded bg-neutral-300 p-1 text-center text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          class="sm:m-1 inline-block min-w-[2rem] sm:min-w-[2.4rem] rounded sm:p-1 text-center text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800 pb-1 sm:pb-[8.5px]"
           href="{{ printf .url $.Permalink $.Title }}"
           title="{{ i18n .title }}"
           aria-label="{{ i18n .title }}"
@@ -15,4 +20,5 @@
       {{ end }}
     {{ end }}
   </section>
+  <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
 {{ end }}

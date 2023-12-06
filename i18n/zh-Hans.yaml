@@ -43,6 +43,7 @@ search:
   input_placeholder: "搜索"
 
 sharing:
+  info: "分享至"
   email: "通过电子邮件发送"
   facebook: "分享到 Facebook"
   linkedin: "分享到 LinkedIn"
