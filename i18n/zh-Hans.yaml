@@ -55,6 +55,8 @@ sharing:
   line: "分享到 LINE"
   weibo: "分享到 微博"
   # x-twitter: "Post on X"
+  douban: "分享至豆瓣"
+  qq: "分享给QQ好友"
 
 shortcode:
   recent_articles: "最近的文章"
