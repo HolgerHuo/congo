@@ -2,6 +2,7 @@
   {{- $images := .Resources.ByType "image" }}
   {{- $cover := $images.GetMatch (.Params.cover | default "*cover*") }}
   {{- $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $cover }}
+  {{- $featureUrl := .Params.feature | default .Params.cover }}
   <article>
     <header class="max-w-prose">
       {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
@@ -21,12 +22,16 @@
           {{ partial "article-meta.html" (dict "context" . "scope" "single") }}
         </div>
       {{ end }}
-      {{ with $feature }}
+      {{ if or ($feature) ($featureUrl) }}
         <div class="prose">
           {{ $altText := $.Params.featureAlt | default $.Params.coverAlt | default "" }}
           {{ $class := "mb-6 rounded-md" }}
-          {{ $webp := $.Page.Site.Params.enableImageWebp | default true }}
-          {{ partial "picture.html" (dict "img" . "alt" $altText "class" $class "lazy" false "webp" $webp) }}
+          {{ if not $feature }}
+            <img src="{{ $featureUrl | safeURL }}" alt="{{ $altText }}" class="{{ $class }}"/>
+          {{ else }}
+            {{ $webp := $.Page.Site.Params.enableImageWebp | default true }}
+            {{ partial "picture.html" (dict "img" . "alt" $altText "class" $class "lazy" false "webp" $webp) }}
+          {{ end }}
           {{ with $.Params.coverCaption }}
             <figcaption class="-mt-3 mb-6 text-center">{{ . | markdownify }}</figcaption>
           {{ end }}
