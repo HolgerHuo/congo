@@ -58,5 +58,15 @@
     "icon": "weibo",
     "title": "sharing.weibo",
     "url": "https://service.weibo.com/share/share.php?url=%s&appkey=&title=%s&pic=&ralateUid=&lang"
+  },
+  "douban": {
+    "icon": "douban",
+    "title": "sharing.douban",
+    "url": "http://shuo.douban.com/!service/share?href=%s&name=%s"
+  },
+  "qq": {
+    "icon": "qq",
+    "title": "sharing.qq",
+    "url": "https://connect.qq.com/widget/shareqq/index.html?url=%s&desc=%s"
   }
 }
