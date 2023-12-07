@@ -1,3 +1,18 @@
+# Fork Notes
+
+This is a fork of [Congo](https://github.com/jpanther/congo/) used by [Holger's Blog](https://holger.one). All modifications are rebased on top of the commit tree.
+
+## Changes
+
+- Add sharing targets in China
+- Change sharing targets styles
+- Support umami and matomo analytics
+- Add RSS icon in footer
+- Make site title bold
+- Center artile contents
+- Pick out category from taxomonies
+- Various improvements
+
 # Congo
 
 Congo is designed to be a powerful, lightweight theme for [Hugo](https://gohugo.io). It's built using Tailwind CSS with a clean and minimalist design that prioritises to your content.
