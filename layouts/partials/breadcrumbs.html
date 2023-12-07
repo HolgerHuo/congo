@@ -1,4 +1,4 @@
-<ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+<ol class="{{ if eq site.Language.LanguageCode "zh-Hans" }}mb-2 {{ end }}text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
   {{ template "crumb" (dict "p1" . "p2" .) }}
 </ol>
 {{ define "crumb" }}

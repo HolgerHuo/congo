@@ -13,7 +13,7 @@
         {{ partial "picture.html" (dict "img" $authorImage "alt" $altText "class" $imgClass "lazy" $lazy) }}
       {{ end }}
     {{ end }}
-    <h1 class="text-4xl font-extrabold">
+    <h1 class="{{ if eq site.Language.LanguageCode "zh-Hans" }}mb-2 {{ else }}mb-1 {{ end }}text-4xl font-extrabold">
       {{ .Site.Language.Params.Author.name | default .Site.Title }}
     </h1>
     {{ with .Site.Language.Params.Author.headline }}
