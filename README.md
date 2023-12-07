@@ -1,3 +1,11 @@
+# Fork Notes
+
+This is a fork of [Congo](https://github.com/jpanther/congo/) used by [Holger's Blog](https://holger.one). All modifications are rebased on top of the commit tree.
+
+## Changes
+
+See [commit history](https://github.com/HolgerHuo/congo/commits/main/)
+
 # Congo
 
 Congo is designed to be a powerful, lightweight theme for [Hugo](https://gohugo.io). It's built using Tailwind CSS with a clean and minimalist design that prioritises to your content.
