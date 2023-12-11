@@ -16,16 +16,14 @@
         <img
           alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}"
           {{ if not $feature }}
-            class="w-24 rounded-md sm:w-40"
+            class="w-24 rounded-md sm:w-60 object-cover object-center h-full"
             src="{{ $featureUrl | safeURL }}"
-            width="160"
-            height="120"
           {{ else }}
             {{ if eq .MediaType.SubType "svg" }}
-              class="w-24 max-w-[6rem] max-h-[4.5rem] rounded-md sm:max-h-[7.5rem] sm:w-40
+              class="w-24 max-w-[6rem] max-h-[4.5rem] rounded-md sm:max-h-[7.5rem] sm:w-60
               sm:max-w-[10rem]" src="{{ .RelPermalink }}"
             {{ else }}
-              class="w-24 rounded-md sm:w-40" srcset="
+              class="w-24 rounded-md sm:w-60 object-cover object-center h-full" srcset="
               {{- (.Fill "160x120 smart").RelPermalink }}
               160w, {{- (.Fill "320x240 smart").RelPermalink }} 2x"
               src="{{ (.Fill "160x120 smart").RelPermalink }}" width="160" height="120"
