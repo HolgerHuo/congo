@@ -11,6 +11,7 @@ article:
   word_count:
     one: "{{ .Count }} 字"
     other: "{{ .Count }} 字"
+  category_title: "分类"
 
 author:
   byline_title: "作者"

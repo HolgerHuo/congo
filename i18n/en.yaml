@@ -12,6 +12,7 @@ article:
   word_count:
     one: "{{ .Count }} word"
     other: "{{ .Count }} words"
+  category_title: "Category"
 
 author:
   byline_title: "Author"
