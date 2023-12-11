@@ -127,6 +127,9 @@ module.exports = {
           },
         },
       }),
+      maxWidth: {
+        "prose": "76ch"
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
