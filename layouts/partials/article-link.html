@@ -1,9 +1,9 @@
-<article class="mt-6 flex max-w-prose flex-row">
+<article class="mt-6 flex max-w-prose sm:flex-row flex-col text-center sm:text-left w-[90%] sm:w-full sm:mx-0 mx-auto">
   {{- $images := $.Resources.ByType "image" }}
   {{- $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
   {{- $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
   {{- with $feature }}
-    <div class="flex-none pe-4 sm:pe-6 ">
+    <div class="flex-none sm:pe-6 mb-4 sm:mb-0">
       <a
         href="{{ with $.Params.externalUrl }}
           {{ . }}
@@ -15,13 +15,13 @@
         <img
           alt="{{ $.Params.featureAlt | default $.Params.thumbnailAlt | default "" }}"
           {{ if eq .MediaType.SubType "svg" }}
-            class="w-24 max-w-[6rem] max-h-[4.5rem] rounded-md sm:max-h-[7.5rem] sm:w-40
+            class="w-full max-w-[6rem] max-h-[4.5rem] rounded-md sm:max-h-[7.5rem] sm:w-60 
             sm:max-w-[10rem]" src="{{ .RelPermalink }}"
           {{ else }}
-            class="w-24 rounded-md sm:w-40" srcset="
-            {{- (.Fill "160x120 smart").RelPermalink }}
-            160w, {{- (.Fill "320x240 smart").RelPermalink }} 2x"
-            src="{{ (.Fill "160x120 smart").RelPermalink }}" width="160" height="120"
+            class="w-full rounded-md sm:w-60 object-cover object-center h-full" srcset="
+            {{- (.Fill "360x180 smart").RelPermalink }}
+            160w, {{- (.Fill "720x360 smart").RelPermalink }} 2x"
+            src="{{ (.Fill "360x180 smart").RelPermalink }}" width="360" height="180"
           {{ end }}
           {{ if $.Site.Params.enableImageLazyLoading | default true }}
             loading="lazy"
@@ -35,7 +35,7 @@
       {{ with .Params.externalUrl }}
         <div>
           <a
-            class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+            class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral w-full sm:text-left text-center"
             href="{{ . }}"
             target="_blank"
             rel="external"
@@ -51,7 +51,7 @@
         </div>
       {{ else }}
         <a
-          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          class="text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral w-full sm:text-left text-center"
           href="{{ .RelPermalink }}"
           >{{ .Title | emojify }}</a
         >
