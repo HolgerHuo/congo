@@ -1,4 +1,4 @@
-{{ with .Site.Language.Params.Author.links }}
+{{ with . }}
   <div class="max-w-fit justify-center flex flex-wrap text-neutral-400 dark:text-neutral-500">
     {{ range $links := . }}
       {{ range $name, $url := $links }}
