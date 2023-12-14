@@ -14,7 +14,7 @@
         <button
           class="group-dark:hover:text-primary-400 flex w-full items-center justify-end transition-colors group-hover:text-primary-600"
         >
-          {{ partial "icon.html" "translate" }}<span class="text-sm">{{ .Lang | upper }}</span
+          {{ partial "icon.html" "translate" }}<span class="text-sm">{{ .Language.LanguageName }}</span
           ><span class="text-[0.6rem]"
             >{{ partial "icon.html" (cond (eq $dir "down") "chevron-down" "chevron-up") }}</span
           >
