@@ -1,9 +1,9 @@
 {{ with .Site.Language.Params.Author.links }}
-  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+  <div class="max-w-fit justify-center flex flex-wrap text-neutral-400 dark:text-neutral-500">
     {{ range $links := . }}
       {{ range $name, $url := $links }}
         <a
-          class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+          class="sm:px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
           style="will-change:transform;"
           href="{{ $url | safeURL }}"
           target="_blank"
