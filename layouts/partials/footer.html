@@ -111,8 +111,8 @@
       {{/* Appearance switcher */}}
       {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
         <div
-          class="{{ if .Site.Params.footer.showScrollToTop | default true -}}
-            me-14
+          class="{{ if and (.Site.Params.footer.showScrollToTop | default true) (gt .WordCount 200) -}}
+            sm:me-14
           {{- end }} cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
         >
           <button id="appearance-switcher-0" type="button" aria-label="appearance switcher">
