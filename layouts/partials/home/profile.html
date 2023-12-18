@@ -22,7 +22,7 @@
       </h2>
     {{ end }}
     <div class="mt-1 text-2xl">
-      {{ partialCached "author-links.html" . }}
+      {{ partialCached "author-links.html" .Site.Language.Params.Author.links .Site.Language.Params.Author }}
     </div>
   </header>
   <section class="prose dark:prose-invert">{{ .Content | emojify }}</section>
