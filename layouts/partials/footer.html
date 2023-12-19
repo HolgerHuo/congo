@@ -1,13 +1,13 @@
 <footer class="py-10 print:hidden">
   {{/* Footer menu */}}
   {{ if .Site.Menus.footer }}
-    <nav class="pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
-      <ul class="flex list-none flex-col sm:flex-row">
+    <nav class="pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 hidden sm:block">
+      <ul class="flex list-none flex-row ">
         {{ range .Site.Menus.footer }}
           {{ if and (eq .Params.action "locale") (or (not page.IsTranslated) (not site.IsMultiLingual)) }}
             {{ continue }}
           {{ end }}
-          <li class="group mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0">
+          <li class="group text-end mb-0 me-7 last:me-0">
             {{ if eq .Params.action "search" }}
               {{ $.Scratch.Add "searchCount" 1 }}
               {{ if $.Site.Params.enableSearch | default false }}
