@@ -40,7 +40,7 @@
   <div class="flex flex-row flex-wrap items-center justify-center{{ if ne $scope "single" }} sm:justify-normal{{ end }}">
     {{/* Output partials */}}
     {{ with ($meta.Get "partials") }}
-      {{ delimit . "<span class=\"px-2 text-primary-500\">&middot;</span>" | safeHTML }}
+      {{ delimit . "<span class=\"px-1 sm:px-2 text-primary-500\">&middot;</span>" | safeHTML }}
     {{ end }}
 
     {{/* Output draft label */}}
