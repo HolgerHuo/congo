@@ -5,6 +5,9 @@
   {{ $altText := .Get "alt" }}
   {{ $caption := .Get "caption" }}
   {{ $href := .Get "href" }}
+  {{ $width := .Get "width" }}
+  {{ $height := .Get "height" }}
+  {{ $style := .Get "style" }}
   {{ $class := default "mx-auto my-0 rounded-md" (.Get "class") }}
 
   {{ $file := $url.Path }}
@@ -21,12 +24,12 @@
     {{- with $img -}}
       {{ $lazy := $.Page.Site.Params.enableImageLazyLoading | default true }}
       {{ $webp := $.Page.Site.Params.enableImageWebp | default true }}
-      {{ partial "picture.html" (dict "img" . "alt" $altText "class" $class "lazy" $lazy "webp" $webp) }}
+      {{ partial "picture.html" (dict "img" . "alt" $altText "class" $class "lazy" $lazy "webp" $webp "style" $style) }}
     {{- else -}}
-      <img src="{{ $url.String }}" alt="{{ $altText }}" class="{{ $class | default "mx-auto" }}"/>
+      <img src="{{ $url.String }}" alt="{{ $altText }}" class="{{ $class | default "mx-auto" }}"{{ with $style }} style="{{ $style }}"{{ end }}{{ with $width }} width="{{ $width }}"{{ end }} {{ with $height }} height="{{ $height }}"{{ end }}/>
     {{- end -}}
 
     {{ with $href }}</a>{{ end }}
-    {{ with $caption }}<figcaption class="text-center">{{ . | markdownify }}</figcaption>{{ end }}
+    {{ with $caption }}<figcaption class="text-center mb-3">{{ . | markdownify }}</figcaption>{{ end }}
   </figure>
 {{ end }}

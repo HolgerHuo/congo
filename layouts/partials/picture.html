@@ -5,6 +5,7 @@
 {{ $webp := .webp }}
 {{ $lqip := .lqip | default false }}
 {{ $x2 := .x2 | default false }}
+{{ $style := .style }}
 
 {{ with $img }}
   {{ if (eq .MediaType.SubType "svg") }}
@@ -35,6 +36,7 @@
         {{ with $width }}width="{{ . }}"{{ end }}
         {{ with $height }}height="{{ . }}"{{ end }}
         {{ with $class }}class="{{ . }}"{{ end }}
+        {{ with $style }}style="{{ . }}"{{ end }}
         {{ with $alt }}alt="{{ . }}"{{ end }}
         {{ with $lazy }}loading="lazy" decoding="async"{{ end }}
       />
@@ -82,6 +84,7 @@
         />
       {{ end }}
       <img
+        {{ with $style }}style="{{ . }}"{{ end }}
         width="{{ $width }}"
         height="{{ $height }}"
         {{ with $class }}class="{{ . }}"{{ end }}
